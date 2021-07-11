@@ -3,8 +3,8 @@ class Animal
 		puts "I am moving"
 	end
 
-	def baliktarin(enum)
-		p enum.reverse
+	def baliktarin(object)
+		p object.reverse
 	end
 end
 
@@ -16,18 +16,18 @@ end
 
 class Sample
 	def reverse
-		return ("Baliktad")
+		return "Baliktad"
 	end
 end
 
-animal = Animal.new()
-fish = Fish.new()
+animal = Animal.new
+fish = Fish.new
 
 puts "Polymorphism by Inheritance"
-animal.move()
-fish.move()
+animal.move
+fish.move
 
-sample = Sample.new()
+sample = Sample.new
 array = [1, 2, 3, 4, 5, 6, 7]
 string = "Hello, World!"
 
