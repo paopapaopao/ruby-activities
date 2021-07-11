@@ -1,28 +1,19 @@
-def count_of_positives_and_sum_of_negatives(array)
-	if (array == nil || array.size == 0)
-		return ([])
+def positives_count_and_negatives_sum(list)
+	if list == nil || list.empty?
+		return []
 	else
-		count_of_positives = 0
-		sum_of_negatives = 0
-
-		array.each do |num|
-			if (num > 0)
-				count_of_positives += 1
-			else
-				sum_of_negatives += num
-			end
+		positives = list.select do |i|
+			i > 0
+		end
+		negatives = list.select do |i|
+			i < 0
 		end
 
-		return ([count_of_positives, sum_of_negatives])
+		return [positives.size, negatives.sum]
 	end
 end
 
-array1 = nil
-array2 = []
-array3 = [0]
-array4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]
-
-puts count_of_positives_and_sum_of_negatives(array1)
-puts count_of_positives_and_sum_of_negatives(array2)
-puts count_of_positives_and_sum_of_negatives(array3)
-puts count_of_positives_and_sum_of_negatives(array4)
+p positives_count_and_negatives_sum(nil)
+p positives_count_and_negatives_sum([])
+p positives_count_and_negatives_sum([0])
+p positives_count_and_negatives_sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15])
